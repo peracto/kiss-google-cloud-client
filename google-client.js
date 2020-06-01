@@ -7,6 +7,12 @@ const now = () => Math.floor(new Date().getTime() / 1000)
 const GOOGLE_TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token'
 
 module.exports = function createClient(config) {
+    config = {
+        ...config,
+        scope: 'https://www.googleapis.com/auth/cloud-platform',
+        ttl: 3600, // 1 hour
+        renew: 300, // 5 minutes
+    }
     return authFetchFactory({
         fetch: retryFetch,
         auth: authTokenFactory(
