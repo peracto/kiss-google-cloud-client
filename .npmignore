@@ -1,0 +1,9 @@
+.npmignore
+.editorconfig
+*.code-workspace
+.prettierrc
+.vscode
+.nvmrc
+.github
+.travis.yml
+.idea
